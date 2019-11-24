@@ -1,8 +1,7 @@
 package com.lpa.encryptedsharedpreferences.store
 
 interface UserStore {
-    fun getUser(): UserModel?
     fun saveOrUpdate(user: UserModel)
-    fun deleteUser()
-    fun createUser(): UserModel
+    fun getUser(mailAddress: String): UserModel?
+    fun deleteUser(mailAddress:String)
 }

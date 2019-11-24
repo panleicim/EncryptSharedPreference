@@ -6,7 +6,7 @@ import androidx.security.crypto.MasterKeys
 import com.google.gson.Gson
 
 
-class UserStoreImpl(@Transient val mContext: Context) : UserStore {
+class UserEncStoreImpl(@Transient val mContext: Context) : UserStore {
 
     private val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
 
@@ -23,8 +23,11 @@ class UserStoreImpl(@Transient val mContext: Context) : UserStore {
     }
 
 
-    override fun getUser(): UserModel? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun getUser(mailAddress:String): UserModel? {
+        val userInJsonString=sharedPreferences.getString(mailAddress,null)
+        return if (userInJsonString!=null)
+            gson.fromJson(userInJsonString,UserModel::class.java)
+        else null
     }
 
     override fun saveOrUpdate(user: UserModel) {
@@ -32,12 +35,9 @@ class UserStoreImpl(@Transient val mContext: Context) : UserStore {
         sharedPreferences.edit().putString(user.mailAddress, gson.toJson(user)).apply()
     }
 
-    override fun deleteUser() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun deleteUser(mailAddress:String) {
+        sharedPreferences.edit().remove(mailAddress).apply()
     }
 
-    override fun createUser(): UserModel {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
 }
