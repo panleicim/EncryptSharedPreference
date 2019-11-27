@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <Preference
+        app:key="firstName"
+        app:summary="Report technical issues or suggest new features"
+        tools:title="@string/first_name"
+        app:title="@string/first_name" />
+    <Preference
+        app:key="lastName"
+        app:summary="Report technical issues or suggest new features"
+        tools:title="Last Name"
+        app:title="Send feedback" />
+    <Preference
+        app:key="lastName"
+        app:summary="Report technical issues or suggest new features"
+        tools:title="Last Name"
+        app:title="Send feedback" />
+</PreferenceScreen>

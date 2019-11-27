@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EncryptedSharedPreferences</string>
+
+    <string name="last_name">Last Name</string>
+
+    <string name="first_name">first Name</string>
 </resources>

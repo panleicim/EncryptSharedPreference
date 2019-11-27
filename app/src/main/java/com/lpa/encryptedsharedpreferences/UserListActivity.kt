@@ -1,5 +1,6 @@
 package com.lpa.encryptedsharedpreferences
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,7 +11,7 @@ class UserListActivity : AppCompatActivity() {
     val r: RecyclerView by lazy {
         findViewById<RecyclerView>(R.id.userList)
     }
-    val btnAddUser: Button by lazy {
+    private val btnAddUser: Button by lazy {
         findViewById<Button>(R.id.btnAddUser)
     }
 
@@ -27,6 +28,7 @@ class UserListActivity : AppCompatActivity() {
     }
 
     private fun showCreateUserActivity() {
-
+        val intent = Intent(this, CreateUserActivity::class.java)
+        startActivity(intent)
     }
 }
