@@ -17,8 +17,9 @@ class UserListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setUpListeners()
+
         setContentView(R.layout.activity_main)
+        setUpListeners()
     }
 
     private fun setUpListeners() {
