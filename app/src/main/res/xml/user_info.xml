@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <Preference
-        app:key="firstName"
-        app:summary="User's first name"
-        app:title="@string/first_name"
-        tools:title="@string/first_name" />
-    <Preference
-        app:key="lastName"
-        app:summary="User's last name"
-        app:title="Send feedback"
-        tools:title="Last Name" />
-    <Preference
-        app:key="lastName"
-        app:summary="Report technical issues or suggest new features"
-        app:title="Send feedback"
-        tools:title="Last Name" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <EditTextPreference
+            app:key="firstName"
+            app:summary="User's first name"
+            app:title="@string/first_name"
+            tools:title="@string/first_name" />
+    <EditTextPreference
+            app:key="lastName"
+            app:summary="@string/user_last_name"
+            app:title="Send feedback"
+            tools:title="@string/user_last_name" />
+    <EditTextPreference
+            app:key="mail"
+            app:summary="@string/user_mail"
+            app:title="@string/mail"
+            tools:title="@string/mail" />
 </PreferenceScreen>

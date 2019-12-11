@@ -1,24 +1,30 @@
 package com.lpa.encryptedsharedpreferences
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 
-class CreateUserActivity : AppCompatActivity(){
+class CreateUserActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+
+    override fun onSharedPreferenceChanged(p0: SharedPreferences?, p1: String?) {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.create_user_activity)
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.container, CreatUserFragment())
-            .commit()
+        setContentView(R.layout.create_account_step_two_content)
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.container, CreateUserFragment())
+//            .commit()
     }
 }
 
-class CreatUserFragment : PreferenceFragmentCompat(){
+class CreateUserFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.user_info, rootKey)
+        addPreferencesFromResource(R.xml.user_info)
     }
+
 
 }

@@ -2,6 +2,11 @@
     <string name="app_name">EncryptedSharedPreferences</string>
 
     <string name="last_name">Last Name</string>
+    <string name="user_last_name">User\'s last name</string>
 
     <string name="first_name">first Name</string>
+    <string name="add_user">Add user</string>
+    <string name="mail">Address mail</string>
+    <string name="user_mail">User\'s Address mail</string>
+    <string name="valid">Valid</string>
 </resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/SignUp2ContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingBottom="40dp">
+
+    <android.support.constraint.Guideline
+            android:id="@+id/guidelineLeft"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+            android:id="@+id/guidelineRight"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+    <View
+            android:id="@+id/dividerView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="@+id/guidelineLeft"
+            app:layout_constraintRight_toRightOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineLeft" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_layout_nom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/create_account_fields_obligatoire_nom"
+            app:hintTextAppearance="@style/InputTextLabel"
+            app:layout_constraintLeft_toLeftOf="@+id/guidelineLeft"
+            app:layout_constraintRight_toRightOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineLeft">
+
+        <EditText
+                android:id="@+id/edt_modify_account_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:imeOptions="actionNext"
+                android:inputType="textVisiblePassword"
+                android:nextFocusDown="@id/edt_modify_account_firstname"
+                android:textColor="@color/grey_label_color"
+                android:textSize="@dimen/text_xs_size" />
+
+        <TextView
+                android:id="@+id/tv_modify_account_lastname_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_account_error_minimum_caractere_message"
+                android:textColor="@color/error_color"
+                android:textSize="@dimen/text_xs_size"
+                android:visibility="invisible" />
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_prenom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/create_account_fields_obligatoire_prenom"
+            app:hintTextAppearance="@style/InputTextLabel"
+            app:layout_constraintLeft_toLeftOf="@+id/guidelineLeft"
+            app:layout_constraintRight_toRightOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_nom">
+
+        <EditText
+                android:id="@+id/edt_modify_account_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:imeOptions="actionNext"
+                android:inputType="textVisiblePassword"
+                android:nextFocusDown="@id/edt_modify_account_birthdate_day"
+                android:textColor="@color/grey_label_color"
+                android:textSize="@dimen/text_xs_size" />
+
+        <TextView
+                android:id="@+id/tv_modify_account_firstname_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_account_error_minimum_caractere_message"
+                android:textColor="@color/error_color"
+                android:textSize="@dimen/text_xs_size"
+                android:visibility="invisible" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+            android:id="@+id/validateCreateAccountBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/valid"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_prenom" />
+
+
+</android.support.constraint.ConstraintLayout>
+

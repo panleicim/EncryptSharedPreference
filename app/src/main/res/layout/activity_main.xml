@@ -17,7 +17,7 @@
 
     <Button
         android:id="@+id/btnAddUser"
-
+        android:text="@string/add_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
