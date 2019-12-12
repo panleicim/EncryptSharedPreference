@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/SignUp2ContentView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:paddingBottom="40dp">
+        android:orientation="vertical">
 
 
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_firstname"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/user_first_name"
-            app:hintTextAppearance="@style/InputTextLabel"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:hint="@string/user_first_name">
 
 
         <EditText
@@ -35,15 +30,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_prenom"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/user_last_name"
-            app:hintTextAppearance="@style/InputTextLabel"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_firstname">
-
+            android:hint="@string/user_last_name">
 
         <EditText
                 android:id="@+id/edt_modify_account_firstname"
@@ -55,17 +45,33 @@
                 android:textColor="@android:color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/user_mail">
+
+
+        <EditText
+                android:id="@+id/etMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:imeOptions="actionNext"
+                android:inputType="textVisiblePassword"
+                android:textColor="@android:color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
             android:id="@+id/validateCreateAccountBtn"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="@string/valid"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_prenom" />
+            android:onClick="onValidClicked"
+            android:text="@string/valid" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 
