@@ -4,9 +4,22 @@ import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.google.gson.Gson
+import com.lpa.encryptedsharedpreferences.model.UserModel
 
 
 class UserEncStoreImpl(@Transient val mContext: Context) : UserStore {
+
+
+    companion object {
+
+        private lateinit var instance: UserStore
+
+        fun init(context: Context) {
+            instance = UserEncStoreImpl(context)
+        }
+
+        fun getInstance(): UserStore = instance
+    }
 
     private val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
 
@@ -23,10 +36,13 @@ class UserEncStoreImpl(@Transient val mContext: Context) : UserStore {
     }
 
 
-    override fun getUser(mailAddress:String): UserModel? {
-        val userInJsonString=sharedPreferences.getString(mailAddress,null)
-        return if (userInJsonString!=null)
-            gson.fromJson(userInJsonString,UserModel::class.java)
+    override fun getUser(mailAddress: String): UserModel? {
+        val userInJsonString = sharedPreferences.getString(mailAddress, null)
+        return if (userInJsonString != null)
+            gson.fromJson(
+                userInJsonString,
+                UserModel::class.java
+            )
         else null
     }
 
@@ -35,7 +51,7 @@ class UserEncStoreImpl(@Transient val mContext: Context) : UserStore {
         sharedPreferences.edit().putString(user.mailAddress, gson.toJson(user)).apply()
     }
 
-    override fun deleteUser(mailAddress:String) {
+    override fun deleteUser(mailAddress: String) {
         sharedPreferences.edit().remove(mailAddress).apply()
     }
 
