@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.lpa.encryptedsharedpreferences.contact.ICreateUserPresenter
 import com.lpa.encryptedsharedpreferences.contact.ICreateUserView
 import com.lpa.encryptedsharedpreferences.utils.log
 import org.jetbrains.anko.toast
@@ -14,6 +15,9 @@ class CreateUserActivity : AppCompatActivity(), ICreateUserView {
         const val TAG = "CreateUserActivity"
     }
 
+    val mPresenter: ICreateUserPresenter by lazy {
+        CreateUserPresenter(this, this)
+    }
     val edtFirstName: EditText by lazy {
         findViewById<EditText>(R.id.edtFirstName)
     }
@@ -36,6 +40,7 @@ class CreateUserActivity : AppCompatActivity(), ICreateUserView {
     }
 
     override fun onUserCreated() {
+        mPresenter.createUser(etMail.text.toString(),edtLastName.text.toString(),edtFirstName.text.toString())
         toast(R.string.msg_user_created)
         finish()
     }
