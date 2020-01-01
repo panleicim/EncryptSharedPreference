@@ -1,4 +1,4 @@
-package com.lpa.encryptedsharedpreferences.adapter
+package com.lpa.encryptedsharedpreferences.user.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lpa.encryptedsharedpreferences.R
-import com.lpa.encryptedsharedpreferences.model.UserModel
+import com.lpa.encryptedsharedpreferences.user.model.UserModel
 
 class UserItemAdapter(var list: List<UserModel>, val context: Context) :
     RecyclerView.Adapter<ItemViewHolder>() {

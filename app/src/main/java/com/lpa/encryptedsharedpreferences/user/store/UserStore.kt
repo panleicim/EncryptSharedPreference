@@ -1,6 +1,6 @@
-package com.lpa.encryptedsharedpreferences.store
+package com.lpa.encryptedsharedpreferences.user.store
 
-import com.lpa.encryptedsharedpreferences.model.UserModel
+import com.lpa.encryptedsharedpreferences.user.model.UserModel
 
 interface UserStore {
     fun saveOrUpdate(user: UserModel)

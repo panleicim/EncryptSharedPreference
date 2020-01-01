@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UserListActivity">
+    tools:context=".user.views.UserListActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -18,6 +18,12 @@
     <Button
         android:id="@+id/btnAddUser"
         android:text="@string/add_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnRawData"
+        android:onClick="showUnencrypted"
+        android:text="@string/show_uncrypted_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -1,4 +1,4 @@
-package com.lpa.encryptedsharedpreferences.contact
+package com.lpa.encryptedsharedpreferences.user.contact
 
 interface ICreateUserView {
     fun onUserCreated()

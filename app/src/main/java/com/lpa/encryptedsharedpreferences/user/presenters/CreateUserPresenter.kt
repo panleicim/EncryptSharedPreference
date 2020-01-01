@@ -1,11 +1,12 @@
-package com.lpa.encryptedsharedpreferences
+package com.lpa.encryptedsharedpreferences.user.presenters
 
 import android.content.Context
-import com.lpa.encryptedsharedpreferences.contact.ICreateUserPresenter
-import com.lpa.encryptedsharedpreferences.contact.ICreateUserView
-import com.lpa.encryptedsharedpreferences.model.UserModel
-import com.lpa.encryptedsharedpreferences.store.UserEncStoreImpl
-import com.lpa.encryptedsharedpreferences.store.UserStore
+import com.lpa.encryptedsharedpreferences.R
+import com.lpa.encryptedsharedpreferences.user.contact.ICreateUserPresenter
+import com.lpa.encryptedsharedpreferences.user.contact.ICreateUserView
+import com.lpa.encryptedsharedpreferences.user.model.UserModel
+import com.lpa.encryptedsharedpreferences.user.store.UserEncStoreImpl
+import com.lpa.encryptedsharedpreferences.user.store.UserStore
 
 class CreateUserPresenter(val view: ICreateUserView, val mContext: Context) : ICreateUserPresenter {
 

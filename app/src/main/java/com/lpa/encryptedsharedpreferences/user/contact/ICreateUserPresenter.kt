@@ -1,6 +1,6 @@
-package com.lpa.encryptedsharedpreferences.contact
+package com.lpa.encryptedsharedpreferences.user.contact
 
-import com.lpa.encryptedsharedpreferences.model.UserModel
+import com.lpa.encryptedsharedpreferences.user.model.UserModel
 
 interface ICreateUserPresenter {
     fun showError(msg:String)

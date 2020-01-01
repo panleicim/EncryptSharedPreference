@@ -1,10 +1,10 @@
-package com.lpa.encryptedsharedpreferences.store
+package com.lpa.encryptedsharedpreferences.user.store
 
 import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.google.gson.Gson
-import com.lpa.encryptedsharedpreferences.model.UserModel
+import com.lpa.encryptedsharedpreferences.user.model.UserModel
 
 
 class UserEncStoreImpl(@Transient val mContext: Context) : UserStore {

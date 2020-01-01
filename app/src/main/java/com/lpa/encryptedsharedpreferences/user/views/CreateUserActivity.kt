@@ -1,11 +1,13 @@
-package com.lpa.encryptedsharedpreferences
+package com.lpa.encryptedsharedpreferences.user.views
 
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.lpa.encryptedsharedpreferences.contact.ICreateUserPresenter
-import com.lpa.encryptedsharedpreferences.contact.ICreateUserView
+import com.lpa.encryptedsharedpreferences.R
+import com.lpa.encryptedsharedpreferences.user.contact.ICreateUserPresenter
+import com.lpa.encryptedsharedpreferences.user.contact.ICreateUserView
+import com.lpa.encryptedsharedpreferences.user.presenters.CreateUserPresenter
 import com.lpa.encryptedsharedpreferences.utils.log
 import org.jetbrains.anko.toast
 
@@ -39,7 +41,9 @@ class CreateUserActivity : AppCompatActivity(), ICreateUserView {
     }
 
     fun onValidClicked(view: View) {
-        log("create user", TAG)
+        log("create user",
+            TAG
+        )
         mPresenter.createUser(
             etMail.text.toString(),
             edtLastName.text.toString(),

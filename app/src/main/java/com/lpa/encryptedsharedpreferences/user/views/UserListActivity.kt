@@ -1,23 +1,31 @@
-package com.lpa.encryptedsharedpreferences
+package com.lpa.encryptedsharedpreferences.user.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lpa.encryptedsharedpreferences.adapter.UserItemAdapter
-import com.lpa.encryptedsharedpreferences.contact.IUserListView
-import com.lpa.encryptedsharedpreferences.model.UserModel
+import com.lpa.encryptedsharedpreferences.R
+import com.lpa.encryptedsharedpreferences.rawdata.RawdataListActivity
+import com.lpa.encryptedsharedpreferences.user.adapter.UserItemAdapter
+import com.lpa.encryptedsharedpreferences.user.contact.IUserListView
+import com.lpa.encryptedsharedpreferences.user.model.UserModel
+import com.lpa.encryptedsharedpreferences.user.presenters.UserListPresenter
 
 class UserListActivity : AppCompatActivity(), IUserListView {
 
     val userList: RecyclerView by lazy {
         findViewById<RecyclerView>(R.id.userList)
     }
-    val mPresenter:UserListPresenter by lazy{
-        UserListPresenter(this,this.applicationContext)
+    val mPresenter: UserListPresenter by lazy {
+        UserListPresenter(
+            this,
+            this.applicationContext
+        )
     }
+
     override fun userListLoaded(list: List<UserModel>) {
         mAdapter.reload(list)
 
@@ -52,6 +60,11 @@ class UserListActivity : AppCompatActivity(), IUserListView {
 
     private fun showCreateUserActivity() {
         val intent = Intent(this, CreateUserActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun showUnencrypted(view: View) {
+        val intent = Intent(this, RawdataListActivity::class.java)
         startActivity(intent)
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EncryptedSharedPreferences</string>
+    <string name="app_name">EncryptedSharedPrefExample</string>
 
     <string name="last_name">Last Name</string>
     <string name="user_last_name">User\'s last name</string>
@@ -12,4 +12,5 @@
     <string name="valid">Valid</string>
     <string name="msg_user_created">User has been created successfully</string>
     <string name="mail_cannot_be_empty">Mail cannot be empty</string>
+    <string name="show_uncrypted_data">show unencrypted data</string>
 </resources>
