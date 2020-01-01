@@ -35,6 +35,19 @@ class UserEncStoreImpl(@Transient val mContext: Context) : UserStore {
         )
     }
 
+    override fun loadAllUsers(success: (List<UserModel>) -> Unit) {
+        val usersMap = sharedPreferences.all
+        val userList: MutableList<UserModel> = ArrayList()
+        usersMap.values.forEach {
+            userList.add(
+                gson.fromJson(
+                    it as String,
+                    UserModel::class.java
+                )
+            )
+        }
+        success.invoke(userList)
+    }
 
     override fun getUser(mailAddress: String): UserModel? {
         val userInJsonString = sharedPreferences.getString(mailAddress, null)

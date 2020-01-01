@@ -13,22 +13,21 @@ class CreateUserPresenter(val view: ICreateUserView, val mContext: Context) : IC
         UserEncStoreImpl(mContext.applicationContext)
     }
 
-    override fun showError() {
+    override fun showError(msg: String) {
+        view.showError(msg)
     }
 
     override fun createUser(user: UserModel) {
-
-    }
-
-    override fun createUser(mailAddress: String, lastName: String, firstName: String) {
-        if (mailAddress.isNotEmpty()) {
+        if (user.mailAddress.isNotEmpty()) {
+            store.saveOrUpdate(user)
+            view.onUserCreated()
         } else {
-            showError()
+            showError(mContext.getString(R.string.mail_cannot_be_empty))
         }
     }
 
-    private fun checkValidation(value: String) {
-
+    override fun createUser(mailAddress: String, lastName: String, firstName: String) {
+        createUser(UserModel(firstName, lastName, mailAddress))
     }
 
 }

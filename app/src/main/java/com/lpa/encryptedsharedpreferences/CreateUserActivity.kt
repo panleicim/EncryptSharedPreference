@@ -10,6 +10,9 @@ import com.lpa.encryptedsharedpreferences.utils.log
 import org.jetbrains.anko.toast
 
 class CreateUserActivity : AppCompatActivity(), ICreateUserView {
+    override fun showError(msg: String) {
+        toast(msg)
+    }
 
     companion object {
         const val TAG = "CreateUserActivity"
@@ -37,11 +40,16 @@ class CreateUserActivity : AppCompatActivity(), ICreateUserView {
 
     fun onValidClicked(view: View) {
         log("create user", TAG)
+        mPresenter.createUser(
+            etMail.text.toString(),
+            edtLastName.text.toString(),
+            edtFirstName.text.toString()
+        )
     }
 
     override fun onUserCreated() {
-        mPresenter.createUser(etMail.text.toString(),edtLastName.text.toString(),edtFirstName.text.toString())
-        toast(R.string.msg_user_created)
+
+        toast(R.string.msg_user_created).show()
         finish()
     }
 }
